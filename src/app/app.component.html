@@ -1,0 +1,22 @@
+<div flex column grow>
+    <div></div>
+    <div flex row grow>
+        <div flex column center fx-1 input>
+            <div block>
+                <h2>Introduction Block</h2>
+                <mat-form-field>
+                    <input matInput placeholder="Student Name" [(ngModel)]="studentName">
+                </mat-form-field>
+            </div>            
+        </div>
+        <div flex fx-2 output>
+            <div block>
+                <mat-card>
+                    <p>Hi, {{studentName}}</p>
+                    <p>Come to a school where your dreams come true. Trust us, we got this :)</p>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+

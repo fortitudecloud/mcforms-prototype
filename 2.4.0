@@ -1,0 +1,9 @@
+prototype@0.0.0 C:\temp\mcforms\prototype
++-- @angular/cli@1.4.9
+| +-- @angular-devkit/build-optimizer@0.0.32
+| | `-- typescript@2.6.1 
+| +-- UNMET PEER DEPENDENCY @angular-devkit/schematics@0.0.35
+| `-- typescript@2.5.3 
++-- UNMET PEER DEPENDENCY @angular/compiler@5.0.1
+`-- UNMET PEER DEPENDENCY @angular/core@5.0.1
+
