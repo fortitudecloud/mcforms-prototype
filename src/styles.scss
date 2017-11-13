@@ -41,6 +41,10 @@ body {
     }
 }
 
+[flex="!"] {
+    display: flex !important;
+}
+
 [grow] {
     flex-grow: 1;
 }

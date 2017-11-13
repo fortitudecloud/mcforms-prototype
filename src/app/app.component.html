@@ -3,17 +3,37 @@
     <div flex row grow>
         <div flex column center fx-1 input>
             <div block>
-                <h2>Introduction Block</h2>
-                <mat-form-field>
-                    <input matInput placeholder="Student Name" [(ngModel)]="studentName">
-                </mat-form-field>
-            </div>            
+                <h2>Greeting Block</h2>
+                <div flex row>
+                    <mat-form-field fx-1 class="m-10">
+                        <mat-select placeholder="Inject Field" (change)="setField($event)">
+                            <mat-option *ngFor="let field of fields" [value]="field.value">
+                            {{ field.viewValue }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field fx-1 class="m-10">
+                        <input matInput placeholder="{{selectedField.viewValue}}" [(ngModel)]="studentName">
+                    </mat-form-field>
+                </div>           
+                <div flex column>
+                    <mat-form-field>
+                        <textarea matInput placeholder="Greeting Body Text" [(ngModel)]="greetingBody" (keyup)="getBodyCaretPos($event)" (click)="getBodyCaretPos($event)"></textarea>                                        
+                    </mat-form-field>
+                    <i class="material-icons" (click)="addNewLine()">view_headline</i>
+                </div>                     
+            </div>             
         </div>
         <div flex fx-2 output>
             <div block>
-                <mat-card>
-                    <p>Hi, {{studentName}}</p>
-                    <p>Come to a school where your dreams come true. Trust us, we got this :)</p>
+                <mat-card flex="!" row>
+                    <div flex column fx-2>
+                        <p>Hi, {{studentName}}</p>
+                        <p>{{greetingBody}}</p>
+                    </div>
+                    <!-- <div flex row end fx-1>
+                        <img src="./assets/SPARKY.JPG" />
+                    </div>                     -->
                 </mat-card>
             </div>
         </div>
