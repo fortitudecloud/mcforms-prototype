@@ -1,0 +1,62 @@
+<nav></nav>
+<section>
+    <mat-horizontal-stepper [linear]="false">
+        <mat-step>            
+            <ng-template matStepLabel>Template</ng-template>
+            <div  step-1>
+                <h2>Template selection</h2>
+                <p>Continue working with your template or create a new one</p>
+                <mat-table #table [dataSource]="dataSource" *ngIf="dataSource">                    
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                    </ng-container>
+                
+                    <!-- Faculty Column -->
+                    <ng-container matColumnDef="faculty">
+                        <mat-header-cell *matHeaderCellDef> Faculty </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.faculty}} </mat-cell>
+                    </ng-container>
+                
+                    <!-- Color Column -->
+                    <ng-container matColumnDef="course">
+                        <mat-header-cell *matHeaderCellDef> Course </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.course}} </mat-cell>
+                    </ng-container>
+                
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selected(row)"></mat-row>
+                </mat-table>
+                <p class="center light" *ngIf="!dataSource">There are currently no templates</p>
+                <div flex row center>
+                    <button mat-raised-button color="primary" matStepperNext>New Template</button>
+                </div>       
+            </div>     
+        </mat-step>
+        <mat-step>            
+            <ng-template matStepLabel>Build</ng-template>
+            <mat-form-field>
+                <input matInput placeholder="Address">
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>            
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Edit</ng-template>
+            Edit content blocks
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Publish</ng-template>
+            publish controls
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+</section>
