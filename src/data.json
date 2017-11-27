@@ -1,0 +1,10 @@
+{
+    "template": {
+        "med-01": {
+            "name": "New Student",
+            "faculty": "Medicine",
+            "course": "Medicine 101",
+            "blocks": []
+        }
+    }
+}
